@@ -148,7 +148,7 @@ export default ({playSound}: Props) => {
                         actions.togglePause();
                     }}
                     onPressAudio={() => setIsAudio(!isAudio)}
-                    isAudio={isAudio}
+                    isAudioOn={isAudio}
                 />
             </SwipeHandler>
         );

@@ -1,4 +1,4 @@
-import {FlexRow} from "@lindapaiste/layout";
+import {FlexRow} from "@lindapaiste/react-native-layout";
 import {TouchableHighlight} from "react-native";
 import Text from "./Text";
 import React from "react";
@@ -43,7 +43,7 @@ export default ({onPressHelp, onPressPause, onPressAudio, isAudioOn}: Props) => 
             onPress={onPressAudio}
         >
             <AudioIcon
-                vw={10}
+                vw={8}
                 isAudioOn={isAudioOn}
             />
         </TouchableHighlight>

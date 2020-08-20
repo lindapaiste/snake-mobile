@@ -1,7 +1,7 @@
 import {TouchableHighlight} from "react-native";
 import React from "react";
 import Text from "./Text";
-import {useVw} from "@lindapaiste/layout";
+import {useVw} from "@lindapaiste/react-native-layout";
 
 //background: #000;
 //    padding: 1vh;

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {PressStart2P_400Regular, useFonts} from "@expo-google-fonts/press-start-2p";
 import Game from "./Game";
-import {FlexColumn} from "@lindapaiste/layout";
+import {FlexColumn} from "@lindapaiste/react-native-layout";
 import TitleScreen from "../screens/Splash";
 import useSounds from "./useSounds";
 

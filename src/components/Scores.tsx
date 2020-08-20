@@ -1,4 +1,4 @@
-import {FlexColumn, FlexRow} from "@lindapaiste/layout";
+import {FlexColumn, FlexRow} from "@lindapaiste/react-native-layout";
 import Text from "./Text";
 import React from "react";
 import {View} from "react-native";

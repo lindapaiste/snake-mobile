@@ -3,7 +3,7 @@ import React, {ReactNode} from "react";
 import {BasicSquare} from "./Square";
 import {SQUARE_SIZE} from "../constants";
 import Text, {Key} from "./Text";
-import {FlexRow, useVh} from "@lindapaiste/layout";
+import {FlexRow, useVh} from "@lindapaiste/react-native-layout";
 import {Colored} from "../types";
 
 export default () => (

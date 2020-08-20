@@ -1,5 +1,5 @@
 import {Colored, Position, SquareType} from "../types";
-import {PositionedView, SquareView} from "@lindapaiste/layout";
+import {PositionedView, SquareView} from "@lindapaiste/react-native-layout";
 import React from "react";
 import {COLORS, SQUARE_SIZE} from "../constants";
 

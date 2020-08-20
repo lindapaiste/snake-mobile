@@ -1,5 +1,5 @@
 import React from "react";
-import {FlexColumn} from "@lindapaiste/layout";
+import {FlexColumn} from "@lindapaiste/react-native-layout";
 import Board, {Props as BoardProps} from "../components/Board";
 import Scores, {Props as ScoresProps} from "../components/Scores";
 import ScreenWrapper from "./ScreenWrapper";

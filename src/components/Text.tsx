@@ -1,6 +1,6 @@
 import {Text, TextProps, View} from "react-native";
 import React, {ReactText} from "react";
-import {useVw} from "@lindapaiste/layout";
+import {useVw} from "@lindapaiste/react-native-layout";
 
 /**
  * apply lime green color and PressStart font to a Text component

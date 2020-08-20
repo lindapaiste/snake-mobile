@@ -1,6 +1,6 @@
 import {COLORS, HEIGHT, SQUARE_SIZE, WIDTH} from "../constants";
 import React from "react";
-import {FixedSizeView, RelativeContainer, useVw} from "@lindapaiste/layout";
+import {FixedSizeView, RelativeContainer, useVw} from "@lindapaiste/react-native-layout";
 import Square from "./Square";
 import {Position, SquareType} from "../types";
 

@@ -46,7 +46,7 @@ export default (): Returns => {
     useEffect( () => {
         loadAll();
         return unloadAll;
-    })
+    }, [])
 
     /**
      * loops through the events calling loadAsync on each Sound object

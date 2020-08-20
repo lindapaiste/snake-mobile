@@ -1,4 +1,4 @@
-import {FlexColumn} from "@lindapaiste/layout";
+import {FlexColumn} from "@lindapaiste/react-native-layout";
 import React, {PropsWithChildren} from "react";
 import {ViewProps} from "react-native";
 

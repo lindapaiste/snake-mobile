@@ -1,14 +1,15 @@
 {
   "expo": {
-    "name": "snek",
+    "name": "Snek",
     "slug": "snek",
+    "description": "Classic Snake Game",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/snake-icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/snake-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -20,7 +21,10 @@
       "supportsTablet": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/snake-icon.png"
+    },
+    "githubUrl": "https://github.com/lindapaiste/snake-mobile",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#000000"
   }
 }

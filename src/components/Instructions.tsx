@@ -1,9 +1,8 @@
 import {View} from "react-native";
 import React, {ReactNode} from "react";
 import {BasicSquare} from "./Square";
-import {SQUARE_SIZE} from "../constants";
 import Text, {Key} from "./Text";
-import {FlexRow, useVh} from "@lindapaiste/react-native-layout";
+import {FlexRow, useVh, useVw} from "@lindapaiste/react-native-layout";
 import {Colored} from "../types";
 
 export default () => (
@@ -27,20 +26,24 @@ export default () => (
 );
 
 /**
- * could multiply size
+ * renders a colored square and also adds a left margin to separate it from the text
  */
-const ExampleSquare = ({type}: { type: Colored }) => (
-    <View
-        style={{
-            marginLeft: .5 * SQUARE_SIZE
-        }}
-    >
-        <BasicSquare
-            type={type}
-            size={SQUARE_SIZE}
-        />
-    </View>
-)
+const ExampleSquare = ({type}: { type: Colored }) => {
+    const squareSize = useVw(4.5);
+
+    return (
+        <View
+            style={{
+                marginLeft: .5 * squareSize
+            }}
+        >
+            <BasicSquare
+                type={type}
+                size={squareSize}
+            />
+        </View>
+    )
+}
 
 /**
  * what about bullet?

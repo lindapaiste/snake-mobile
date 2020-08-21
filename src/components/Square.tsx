@@ -1,7 +1,7 @@
 import {Colored, Position, SquareType} from "../types";
 import {PositionedView, SquareView} from "@lindapaiste/react-native-layout";
 import React from "react";
-import {COLORS, SQUARE_SIZE} from "../constants";
+import {COLORS} from "../constants";
 
 /**
  * basic colored square to be used in instruction list and on board
@@ -26,16 +26,17 @@ export const BasicSquare = ({size, type}: PropsB) => (
 interface Props {
     pos: Position;
     type: SquareType;
+    size: number;
 }
 
-export const Square = ({type, pos}: Props) => (
+export const Square = ({type, pos, size}: Props) => (
     <PositionedView
-        x={pos.x * SQUARE_SIZE}
-        y={pos.y * SQUARE_SIZE}
+        x={pos.x * size}
+        y={pos.y * size}
     >
         <BasicSquare
             type={type}
-            size={SQUARE_SIZE}
+            size={size}
         />
     </PositionedView>
 );

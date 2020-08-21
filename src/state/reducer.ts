@@ -14,18 +14,18 @@ import {
 import {getInitialState} from "./initialState";
 
 export const reducer = (state: State, action: ActionTypes): State => {
-    console.log(action);
+    // for debugging: console.log(action);
     switch (action.type) {
         case DO_MOVE:
             const next = getNextSquare(state);
             if (isDeadly(state, next)) {
-                //don't want to move the snake head forward beyond the walls, so return before doing shift
+                // don't want to move the snake head forward beyond the walls, so return before doing shift
                 return handleDeath(state);
             } else if (isAppleSquare(state, next)) {
-                //appleEat needs to be the inner because appleEat increases the needsGrow which snakeShift looks at
+                // appleEat needs to be the inner because appleEat increases the needsGrow which snakeShift looks at
                 return handleSnakeShift(handleAppleEat(state, next), next);
             } else {
-                //standard snake move into empty space
+                // standard snake move into empty space
                 return handleSnakeShift(state, next);
             }
         case SPEED_UP:
@@ -44,8 +44,8 @@ export const reducer = (state: State, action: ActionTypes): State => {
                 topScore: Math.max(state.score, state.topScore)
             };
         case PAUSE:
-            //toggles pause value
-            //use pause keys to trigger play again from game over
+            // toggles pause value
+            // use pause keys to trigger play again from game over
             if (state.isDead) {
                 return reducer(state, {type: RESTART});
             }
@@ -54,7 +54,7 @@ export const reducer = (state: State, action: ActionTypes): State => {
                 isPlaying: !state.isPlaying
             };
         case PLACE_OBSTACLE:
-            //add new obstacle at the end of the array
+            // add new obstacle at the end of the array
             if (state.obstacleSquares.length >= MAX_OBSTACLES) {
                 return state;
             }
@@ -63,8 +63,8 @@ export const reducer = (state: State, action: ActionTypes): State => {
                 obstacleSquares: [...state.obstacleSquares, randomAvailable(state)]
             };
         case EXPIRE_OBSTACLE:
-            //remove the first position in the array, the oldest one
-            //maybe don't allow empty?
+            // remove the first position in the array, the oldest one
+            // maybe don't allow empty?
             return {
                 ...state,
                 obstacleSquares: state.obstacleSquares.slice(1)
@@ -83,7 +83,7 @@ const handleDeath = (state: State): State => {
 };
 
 const handleAppleEat = (state: State, next: Position): State => {
-    //need to increment score, remove eaten apple, and place another apple
+    // need to increment score, remove eaten apple, and place another apple
     const nextApple = randomAvailable(state, next);
     return {
         ...state,
@@ -97,7 +97,7 @@ const handleAppleEat = (state: State, next: Position): State => {
 };
 
 const handleSnakeShift = (state: State, next: Position): State => {
-    //when awaiting grow, don't remove from tail but do decrement needsGrow
+    // when awaiting grow, don't remove from tail but do decrement needsGrow
     if (state.needsGrow > 0) {
         return {
             ...state,
@@ -105,7 +105,7 @@ const handleSnakeShift = (state: State, next: Position): State => {
             needsGrow: state.needsGrow - 1
         };
     }
-    //otherwise add to head and take one off the tail end
+    // otherwise add to head and take one off the tail end
     else {
         return {
             ...state,

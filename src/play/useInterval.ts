@@ -9,19 +9,19 @@ import {useCallback, useEffect, useRef} from "react";
  * and therefore refreshes itself on dependency change
  */
 export const _useInterval = (callback: () => void, timeout: number): void => {
-    //when changing callback, need to clear the previous interval
-    //use useRef to have a persistent reference
-    //typescript got confused about the return value when not prefixing with window.
+    // when changing callback, need to clear the previous interval
+    // use useRef to have a persistent reference
+    // typescript got confused about the return value when not prefixing with window.
     const intervalId = useRef(-1);
 
     useEffect(() => {
-        //clear the previous
+        // clear the previous
         clearInterval(intervalId.current);
 
-        //set interval to new value
+        // set interval to new value
         intervalId.current = setInterval(callback, timeout);
 
-        //return clearInterval cleanup
+        // return clearInterval cleanup
         return () => clearInterval(intervalId.current);
     }, [callback, timeout]);
 };

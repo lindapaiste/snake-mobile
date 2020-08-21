@@ -1,0 +1,41 @@
+# Privacy Policy and Terms & Conditions
+
+Last updated August 20, 2020
+
+#### Overview
+
+Snek Game is a free app built by Linda Paiste ("we" or "us" or "our"). This mobile application ("app" or "game") does not require or collect any personally identifiable information about our users ("user" or "you"). We do collect general information about how you use the game, such as your scores and how many games you play, in order to make the app better for everyone. If the app crashes, we may collect technical information about your device and its operating system so that we can make improvements. These analytics and crash reporting services are administered by the third-party services Google Analytics for Firebase and Firebase Crashlytics.
+
+We may make changes to what information we collect and who we share it with in future versions of the app, so it is important that you view this page periodically to stay up to date. You will be informed of changes to our policies through the last updated date on this page.
+
+By accessing our app, you are agreeing to be bound by these terms of service and privacy policies. If you do not agree with any of these terms, you are prohibited from using or accessing the app and should delete it from your device.
+
+#### Third Parties
+
+This app makes use of third party services which declare their own Terms and Conditions. You may review the terms and conditions of these service providers by clicking on the links below:
+- [Google Play Services](https://www.google.com/policies/privacy/)
+- [Google Analytics for Firebase](https://firebase.google.com/policies/analytics)
+- [Firebase Crashlytics](https://firebase.google.com/support/privacy/)
+
+#### Log Data
+
+If you encounter an error while using the app, I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol ("IP") address, device name, operating system version, the configuration of the app when utilizing my app, the time and date of your use of the app, and other statistics.
+
+#### Cookies
+
+Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory. This app does not use these "cookies" explicitly. However, the app may use third party code and libraries that use "cookies" to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this app.
+
+#### Children's Privacy
+
+We do not knowingly solicit information from or market to children under the age of 13. If you become aware of any data we have collected from children under age 13, please contact us using the contact information provided below.
+
+#### Disclaimer
+
+This app is provided on an 'AS IS' basis. We makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties.
+
+#### Limitations
+
+In no event shall Linda Paiste be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use this app.
+
+#### Contact
+If you have any questions about these policies you may contact Linda Paiste, the developer of this app, at [mailto:lindapaiste@gmail.com](lindapaiste@gmail.com).

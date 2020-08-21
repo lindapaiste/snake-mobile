@@ -1,22 +1,23 @@
 import {FlexColumn, FlexRow} from "@lindapaiste/react-native-layout";
 import Text from "./Text";
 import React from "react";
-import {View} from "react-native";
+import {View, ViewProps} from "react-native";
 import {Scores} from "../screens/GameOver";
 
 /**
  * export props for consistency, although redundant
  */
-export type Props = Scores;
+export type Props = Scores & Pick<ViewProps, 'onLayout'>;
 
 /**
  * show the high score on the left and the current on the right
  */
-export default ({score, topScore}: Props) => (
+export default ({score, topScore, onLayout}: Props) => (
     <FlexRow
         style={{
             justifyContent: "space-between"
         }}
+        onLayout={onLayout}
     >
         <View>
             <Score word="Best" score={topScore}/>

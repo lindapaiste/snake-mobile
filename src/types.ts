@@ -11,20 +11,20 @@ export enum Direction {
 }
 
 export interface State {
-  //direction that the snake is pointed
+  // direction that the snake is pointed
   direction: Direction;
   snakeSquares: Position[];
   appleSquares: Position[];
   obstacleSquares: Position[];
-  //speed is the number of ms between each move
-  //should get faster as the game elapses
+  // speed is the number of ms between each move
+  // should get faster as the game elapses
   speed: number;
-  //number of apples eaten
+  // number of apples eaten
   score: number;
   topScore: number;
   isDead: boolean;
   isFull: boolean;
-  //handle pause
+  // handle pause
   isPlaying: boolean;
   needsGrow: number;
 }

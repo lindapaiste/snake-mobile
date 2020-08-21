@@ -1,5 +1,4 @@
-import {Dimensions} from "react-native";
-import {Colored, SoundEvent, SquareType} from "./types";
+import {Colored, SoundEvent} from "./types";
 import {AVPlaybackSource} from "expo-av/build/AV";
 
 /**
@@ -48,12 +47,7 @@ export const OBSTACLE_EXPIRE = 6;
 export const MAX_OBSTACLES = 5;
 
 /**
- * the web version is designed for a horizontal screen, but mobile is vertical, so it should be based on width
- */
-export const SQUARE_SIZE = Math.floor(.9 * Dimensions.get("window").width / WIDTH);
-
-/**
- * hard-code colors for each square type
+ * hard-code colors for each square type as well as walls and text
  */
 export const COLORS: Record<Colored, string> = {
     snake: "white",
@@ -68,11 +62,16 @@ export const COLORS: Record<Colored, string> = {
  */
 export const MIN_SWIPE_DISTANCE = 10;
 
-
+/**
+ * load in sound files
+ */
 export const SOUNDS: Record<SoundEvent, AVPlaybackSource> = {
     die: require('../assets/death.wav'),
     eatApple: require('../assets/appleEat.wav'),
     turn: require('../assets/turn.wav'),
-}
+};
 
-export const SOUND_EVENTS = Object.keys(SOUNDS) as SoundEvent[]
+/**
+ * export array with the names of all sounds for looping
+ */
+export const SOUND_EVENTS = Object.keys(SOUNDS) as SoundEvent[];

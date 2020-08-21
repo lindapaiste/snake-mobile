@@ -13,7 +13,7 @@ export default ({vw, children}: Props) => (
         uppercase={true}
         style={{
             textAlign: "center",
-            //wordSpacing: fontSize * -.4, react native has letter spacing but no word spacing
+            // wordSpacing: fontSize * -.4, react native has letter spacing but no word spacing
         }}
     >
         {children}

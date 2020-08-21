@@ -20,11 +20,16 @@
     "ios": {
       "supportsTablet": true
     },
+    "android": {
+      "permissions": []
+    },
     "web": {
       "favicon": "./assets/snake-icon.png"
     },
     "githubUrl": "https://github.com/lindapaiste/snake-mobile",
     "userInterfaceStyle": "dark",
-    "backgroundColor": "#000000"
+    "backgroundColor": "#000000",
+    "privacy": "public",
+
   }
 }

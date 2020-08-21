@@ -3,7 +3,7 @@ import React from "react";
 import Text from "./Text";
 import {useVw} from "@lindapaiste/react-native-layout";
 
-//background: #000;
+// background: #000;
 //    padding: 1vh;
 //    margin: 1vh;
 

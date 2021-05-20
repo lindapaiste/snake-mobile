@@ -13,12 +13,16 @@ export type Props = {
     uppercase?: boolean;
 } & TextProps;
 
-export const GreenText = ({vw = 3, lineHeightRatio = 1.5, uppercase = false, ...props}: Props) => {
+/**
+ * forwards ref so that it can be used as a Touchable child
+ */
+export const GreenText = React.forwardRef<Text, Props>(({vw = 3, lineHeightRatio = 1.5, uppercase = false, ...props}, ref) => {
 
     const fontSize = useVw(vw);
 
     return (
         <Text
+            ref={ref}
             {...props}
             style={[{
                 fontSize,
@@ -31,7 +35,7 @@ export const GreenText = ({vw = 3, lineHeightRatio = 1.5, uppercase = false, ...
             ]}
         />
     );
-}
+});
 
 export default GreenText;
 

@@ -4,9 +4,8 @@ import Board, {StateProps as BoardProps} from "../components/Board";
 import Scores, {Props as ScoresProps} from "../components/Scores";
 import ScreenWrapper from "./ScreenWrapper";
 import BottomControls, {Props as ControlsProps} from "../components/BottomControls";
-import {Dimensions} from "react-native";
 import {HEIGHT, WIDTH} from "../constants";
-
+import {useDimensions} from "@react-native-community/hooks";
 export type Props = BoardProps & ScoresProps & ControlsProps;
 
 /**
@@ -25,7 +24,7 @@ export type Props = BoardProps & ScoresProps & ControlsProps;
  */
 export default (props: Props) => {
 
-    const [screen, setScreen] = useState<{ width: number, height: number }>(Dimensions.get("window"));
+    const availableWidth = useDimensions().window.width;
     const [scoresHeight, setScoresHeight] = useState(0);
     const [controlsHeight, setControlsHeight] = useState(0);
 
@@ -33,16 +32,14 @@ export default (props: Props) => {
 
     const squareSize = useMemo(() => calcSquareSize({
             borderWidth,
-            availableWidth: screen.width,
+            availableWidth,
             availableHeight: screen.height - (scoresHeight + controlsHeight),
         }),
         [screen.height, screen.width, scoresHeight, controlsHeight, borderWidth]
     );
 
     return (
-        <ScreenWrapper
-            onLayout={e => setScreen(e.nativeEvent.layout)}
-        >
+        <ScreenWrapper>
             <FlexColumn
                 // group Scores and Board together so that there is no gap between them
                 style={{

@@ -3,6 +3,7 @@ import Instructions from "../components/Instructions";
 import Button from "../components/Button";
 import Title from "../components/Title";
 import ScreenWrapper from "./ScreenWrapper";
+import {View} from "react-native";
 
 /**
  * title screen serves as AppLoading since it won't show "Press Start" button until isReady is true
@@ -21,9 +22,10 @@ export interface Props {
 export default ({onPressStart, isReady}: Props) => {
     return (
         <ScreenWrapper>
-            <Title vw={16}>
-                Snek Game
-            </Title>
+            <View>
+                <Title vw={16}>Snek</Title>
+                <Title vw={16}>Game</Title>
+            </View>
             <Instructions/>
             {
                 isReady ?

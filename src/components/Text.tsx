@@ -1,5 +1,5 @@
 import {Text, TextProps, View} from "react-native";
-import React, {ReactText} from "react";
+import React, {MutableRefObject, ReactText} from "react";
 import {useVw} from "@lindapaiste/react-native-layout";
 
 /**
@@ -13,12 +13,18 @@ export type Props = {
     uppercase?: boolean;
 } & TextProps;
 
-export const GreenText = ({vw = 3, lineHeightRatio = 1.5, uppercase = false, ...props}: Props) => {
+type Ref<T> = ((instance: T | null) => void) | MutableRefObject<T | null> | null;
+
+/**
+ * forwards ref so that it can be used as a Touchable child
+ */
+export const GreenText = React.forwardRef(({vw = 3, lineHeightRatio = 1.5, uppercase = false, ...props}: Props, ref: Ref<Text>) => {
 
     const fontSize = useVw(vw);
 
     return (
         <Text
+            ref={ref}
             {...props}
             style={[{
                 fontSize,
@@ -31,7 +37,7 @@ export const GreenText = ({vw = 3, lineHeightRatio = 1.5, uppercase = false, ...
             ]}
         />
     );
-}
+});
 
 export default GreenText;
 

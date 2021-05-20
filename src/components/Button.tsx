@@ -3,10 +3,6 @@ import React from "react";
 import Text from "./Text";
 import {useVw} from "@lindapaiste/react-native-layout";
 
-// background: #000;
-//    padding: 1vh;
-//    margin: 1vh;
-
 export type Props = {
     onPress(): void;
     children: string;
@@ -26,8 +22,8 @@ export default ({onPress, children}: Props) => {
             onPress={onPress}
         >
             <Text
-               uppercase={true}
-               vw={5}
+                uppercase={true}
+                vw={5}
             >
                 {children}
             </Text>

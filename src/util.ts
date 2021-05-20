@@ -6,21 +6,6 @@ import {HEIGHT, WIDTH} from "./constants";
  * aside from passed in props
  */
 
-export const getKeyDirection = (e: KeyboardEvent): Direction | null => {
-    switch (e.key) {
-        case "ArrowLeft":
-            return Direction.LEFT;
-        case "ArrowUp":
-            return Direction.UP;
-        case "ArrowRight":
-            return Direction.RIGHT;
-        case "ArrowDown":
-            return Direction.DOWN;
-        default:
-            return null;
-    }
-};
-
 export const getSwipeDirection = ({translationX, translationY}: {translationX: number, translationY: number}): Direction => {
     // note: does not check for threshold here
     const isX = Math.abs(translationX) > Math.abs(translationY );

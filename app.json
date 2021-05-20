@@ -18,9 +18,10 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.lindapaiste.snek"
     },
     "android": {
+      "package": "com.lindapaiste.snek",
       "permissions": []
     },
     "web": {
@@ -29,7 +30,6 @@
     "githubUrl": "https://github.com/lindapaiste/snake-mobile",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#000000",
-    "privacy": "public",
-
+    "privacy": "public"
   }
 }

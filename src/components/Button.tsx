@@ -1,11 +1,7 @@
 import {TouchableHighlight} from "react-native";
 import React from "react";
-import Text from "./Text";
-import {useVw} from "@lindapaiste/react-native-layout";
-
-// background: #000;
-//    padding: 1vh;
-//    margin: 1vh;
+import Text from "../text/Text";
+import {useVmin} from "@lindapaiste/react-native-layout";
 
 export type Props = {
     onPress(): void;
@@ -13,7 +9,7 @@ export type Props = {
 }
 
 export default ({onPress, children}: Props) => {
-    const padding = useVw(4);
+    const padding = useVmin(4);
     return (
         <TouchableHighlight
             style={{

@@ -1,6 +1,5 @@
-import {Text, TextProps, View} from "react-native";
-import GreenText from "../components/Text";
-import Title from "../components/Title";
+import {Text, View} from "react-native";
+import Title from "../text/Title";
 import React from "react";
 import * as Linking from "expo-linking";
 

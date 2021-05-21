@@ -1,16 +1,18 @@
 import React, {useState} from 'react';
 import {PressStart2P_400Regular, useFonts} from "@expo-google-fonts/press-start-2p";
-import Game from "./Game";
 import {FlexColumn} from "@lindapaiste/react-native-layout";
 import TitleScreen from "../screens/Splash";
 import useSounds from "./useSounds";
+import {FontSizeProvider} from "../text/FontSizeProvider";
+
+const Game = React.lazy(() => import("./Game"));
 
 /**
  * preload fonts and audio
  * show splash screen until start has been clicked
  * from then on, Game handles everything
  */
-export default () => {
+export default function LoadApp() {
 
     const [fontsLoaded] = useFonts({
         PressStart2P_400Regular
@@ -28,7 +30,13 @@ export default () => {
             return null;
         }
         if (didStart) {
-            return <Game playSound={audio.playSound}/>
+            return (
+                <React.Suspense fallback={(
+                    <TitleScreen onPressStart={() => undefined} isReady={false}/>
+                )}>
+                    <Game playSound={audio.playSound}/>
+                </React.Suspense>
+            )
         } else {
             return (
                 <TitleScreen
@@ -39,19 +47,17 @@ export default () => {
         }
     }
 
-    return (
+return (
+    <FontSizeProvider>
         <FlexColumn
             style={{
                 flex: 1,
-                backgroundColor: "black"
+                backgroundColor: "black",
+                alignItems: "stretch",
             }}
         >
             {renderContent()}
         </FlexColumn>
-    );
+    </FontSizeProvider>
+);
 }
-
-/**
- expo statusbar component allows control of native status bar
- <StatusBar style="auto" />
- **/

@@ -1,6 +1,6 @@
 import React, {useEffect, useReducer, useState} from "react";
 import {OBSTACLE_EVERY, OBSTACLE_EXPIRE, SPEED_UP_EVERY,} from "../constants";
-import Board from "../screens/Playing";
+import Playing from "../screens/Playing";
 import {reducer} from "../state/reducer";
 import {useActions} from "../state/actions";
 import {getInitialState} from "../state/initialState";
@@ -12,6 +12,7 @@ import Help from "../screens/Help";
 import {PlaySound, SoundEvent} from "../types";
 import {useInterval} from "./useInterval";
 import {useIsAudio, useTopScore} from "./useStorage";
+import useSpaceBar from "./useSpaceBar";
 
 /**
  * function handles all of the effects and passes off the state to the render component
@@ -24,7 +25,7 @@ export interface Props {
     playSound: PlaySound;
 }
 
-export default ({playSound}: Props) => {
+export default function Game({playSound}: Props) {
     const [state, dispatch] = useReducer(reducer, getInitialState(true));
 
     const actions = useActions(dispatch);
@@ -107,6 +108,11 @@ export default ({playSound}: Props) => {
     )
 
     /**
+     * Listen for keyboard changes
+     */
+    useSpaceBar(actions.togglePause);
+
+    /**
      * switching between screens
      */
     const [isHelp, setIsHelp] = useState(false);
@@ -139,7 +145,7 @@ export default ({playSound}: Props) => {
                     maybePlaySound('turn');
                 }}
             >
-                <Board
+                <Playing
                     {...state}
                     topScore={topScore || state.topScore}
                     onPressPause={() => actions.togglePause()}

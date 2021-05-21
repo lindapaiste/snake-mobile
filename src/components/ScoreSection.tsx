@@ -1,8 +1,8 @@
-import {FlexColumn, FlexRow} from "@lindapaiste/react-native-layout";
-import Text from "./Text";
+import {FlexRow} from "@lindapaiste/react-native-layout";
 import React from "react";
 import {View, ViewProps} from "react-native";
 import {Scores} from "../screens/GameOver";
+import { Score } from "./Score";
 
 /**
  * export props for consistency, although redundant
@@ -29,16 +29,9 @@ export default ({score, topScore, onLayout}: Props) => (
 );
 
 /**
- * helper for rendering each side to avoid code duplication
+ * props for the cscore on each side
  */
-interface EachProps {
+export interface EachProps {
     word: string;
     score: number;
 }
-export const Score = ({word, score}: EachProps) => (
-    <FlexColumn>
-        <Text vw={3}>{word}</Text>
-        <Text vw={3}>Score</Text>
-        <Text vw={6}>{score}</Text>
-    </FlexColumn>
-)

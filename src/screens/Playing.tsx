@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from "react";
-import {FlexColumn, useVw} from "@lindapaiste/react-native-layout";
+import {FlexColumn, useVmin} from "@lindapaiste/react-native-layout";
 import Board, {StateProps as BoardProps} from "../components/Board";
-import Scores, {Props as ScoresProps} from "../components/Scores";
+import Scores, {Props as ScoresProps} from "../components/ScoreSection";
 import ScreenWrapper from "./ScreenWrapper";
 import BottomControls, {Props as ControlsProps} from "../components/BottomControls";
 import {Dimensions} from "react-native";
@@ -23,13 +23,13 @@ export type Props = BoardProps & ScoresProps & ControlsProps;
  * the screen.  This allows the final layout to have better spacing.  The calculation itself is fairly simple, but it
  * involves a lot of inputs.
  */
-export default (props: Props) => {
+export default function Playing(props: Props) {
 
     const [screen, setScreen] = useState<{ width: number, height: number }>(Dimensions.get("window"));
     const [scoresHeight, setScoresHeight] = useState(0);
     const [controlsHeight, setControlsHeight] = useState(0);
 
-    const borderWidth = useVw(1);
+    const borderWidth = useVmin(1);
 
     const squareSize = useMemo(() => calcSquareSize({
             borderWidth,

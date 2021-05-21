@@ -1,7 +1,7 @@
 import Svg, {Path} from "react-native-svg";
 import React from "react";
 import {COLORS} from "../constants";
-import {useVw} from "@lindapaiste/react-native-layout";
+import {useVw} from "../text/FontSizeProvider";
 
 /**
  * switches between on and off icons

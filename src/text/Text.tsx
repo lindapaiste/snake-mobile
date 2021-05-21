@@ -1,6 +1,6 @@
-import {Text, TextProps, View} from "react-native";
+import {Text, TextProps} from "react-native";
 import React, {ReactText} from "react";
-import {useVw} from "@lindapaiste/react-native-layout";
+import {useVw} from "./FontSizeProvider";
 
 /**
  * apply lime green color and PressStart font to a Text component
@@ -39,19 +39,3 @@ export const GreenText = React.forwardRef<Text, Props>(({vw = 3, lineHeightRatio
 
 export default GreenText;
 
-/** apply special inline stying to key names */
-export const Key = ({children}: { children: string }) => (
-    <View // can't apply border directly to text
-        style={{
-            borderBottomWidth: 2,
-            borderStyle: "solid",
-            borderColor: "lime"
-        }}
-    >
-        <GreenText
-            uppercase={true}
-        >
-            {children}
-        </GreenText>
-    </View>
-);

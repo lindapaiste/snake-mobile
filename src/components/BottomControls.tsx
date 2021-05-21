@@ -1,6 +1,6 @@
 import {FlexRow} from "@lindapaiste/react-native-layout";
-import {TouchableHighlight, ViewProps} from "react-native";
-import Text from "./Text";
+import {TouchableHighlight, View, ViewProps} from "react-native";
+import Text from "../text/Text";
 import React from "react";
 import AudioIcon from "./AudioIcon";
 
@@ -25,6 +25,7 @@ export default ({onPressHelp, onPressPause, onPressAudio, isAudioOn, onLayout}: 
     <FlexRow
         style={{
             width: "100%",
+            maxWidth: 600,
             justifyContent: "space-around"
         }}
         onLayout={onLayout}
@@ -44,10 +45,12 @@ export default ({onPressHelp, onPressPause, onPressAudio, isAudioOn, onLayout}: 
         <TouchableHighlight
             onPress={onPressAudio}
         >
+            <View>
             <AudioIcon
                 vw={8}
                 isAudioOn={isAudioOn}
             />
+            </View>
         </TouchableHighlight>
 
         <TouchableHighlight

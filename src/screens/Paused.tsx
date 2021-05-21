@@ -1,4 +1,4 @@
-import Title from "../components/Title";
+ import Title from "../text/Title";
 import Button from "../components/Button";
 import React from "react";
 import ScreenWrapper from "./ScreenWrapper";

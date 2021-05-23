@@ -28,7 +28,8 @@ export const FontSizeProvider: FC = ({children}) => {
         <View
             onLayout={e => setScreen(e.nativeEvent.layout)}
             style={{
-                flex: 1
+                flex: 1,
+                overflow: "hidden",
             }}
         >
             <FontSizeContext.Provider value={createSize}>

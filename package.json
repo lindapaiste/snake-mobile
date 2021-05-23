@@ -5,28 +5,30 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "deploy": "expo build:web && cd web-build && vercel"
   },
   "dependencies": {
     "@expo-google-fonts/press-start-2p": "^0.1.0",
     "@lindapaiste/react-native-layout": "^1.0.3",
-    "@react-native-community/async-storage": "~1.11.0",
-    "expo": "^38.0.9",
-    "expo-av": "~8.2.1",
-    "expo-font": "^8.2.2",
-    "expo-linking": "^1.0.3",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
-    "react-native-gesture-handler": "~1.6.0",
+    "@react-native-async-storage/async-storage": "^1.13.0",
+    "@react-native-community/async-storage": "~1.12.0",
+    "expo": "^41.0.0",
+    "expo-av": "~9.1.2",
+    "expo-font": "~9.1.0",
+    "expo-linking": "~2.2.3",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
+    "react-native-gesture-handler": "~1.10.2",
     "react-native-svg": "12.1.0",
-    "react-native-web": "^0.11.7"
+    "react-native-web": "~0.13.12"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@types/react": "^16.9.46",
-    "@types/react-native": "^0.62.18",
-    "typescript": "~3.9.5"
+    "@babel/core": "~7.9.0",
+    "@types/react": "~16.9.35",
+    "@types/react-native": "~0.63.2",
+    "typescript": "~4.0.0"
   },
   "private": true
 }
